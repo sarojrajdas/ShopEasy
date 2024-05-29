@@ -13,5 +13,10 @@
       "name": "Product 3"
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "productId": 1,
+      "quantity": 1
+    }
+  ]
 }
