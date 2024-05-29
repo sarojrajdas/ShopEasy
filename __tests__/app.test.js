@@ -1,6 +1,6 @@
 const request = require('supertest');
 const fs = require('fs');
-const app = require('../index'); // Import the app
+const app = require('../index');
 
 const dataFilePath = 'data.json';
 
@@ -54,7 +54,6 @@ describe('ShopEasy API', () => {
 
     describe('GET /cart', () => {
         it('should get all items in the cart', async () => {
-            // First add an item to the cart
             await request(app)
                 .post('/cart')
                 .send({ productId: 1, quantity: 2 });
@@ -75,7 +74,6 @@ describe('ShopEasy API', () => {
 
     describe('DELETE /cart/:productId', () => {
         it('should decrement the quantity of a product in the cart', async () => {
-            // First add an item to the cart
             await request(app)
                 .post('/cart')
                 .send({ productId: 1, quantity: 2 });
@@ -89,7 +87,6 @@ describe('ShopEasy API', () => {
         });
 
         it('should remove the product from the cart if quantity is 0', async () => {
-            // First add an item to the cart
             await request(app)
                 .post('/cart')
                 .send({ productId: 1, quantity: 1 });
